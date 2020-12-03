@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[34,)"
+license="MIT"
+
+[[mods]]
+modId="modmenu"
+displayName="Mod Menu: Hearth"
+version="${file.jarVersion}"
+authors="Prospector"
+description='''
+Port of the popular Mod Menu Fabric mod to Forge.
+'''

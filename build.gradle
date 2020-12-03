@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url = 'https://files.minecraftforge.net/maven'
+        }
+        maven {
+            url = 'https://maven.tterrag.com/'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.0.187'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+group = 'io.github.prospector'
+version = '0.1.0-indev'
+
+minecraft {
+    mappings channel: 'snapshot', version: '20201130-yarn-1.16.4'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            mods {
+                modmenuforge {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    maven { url = 'https://maven.tterrag.com/' }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.16.4-35.0.18'
+}
+
+jar.finalizedBy('reobfJar')

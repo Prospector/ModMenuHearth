@@ -1,0 +1,9 @@
+# IDE and Gradle
+.gradle/
+.idea/
+build/
+*.iml
+
+# ForgeGradle
+logs/
+run/
